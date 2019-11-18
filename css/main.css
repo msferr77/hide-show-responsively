@@ -17,11 +17,16 @@ html {
 }
 
 img {
-  display: flex;
+  display: block;
   width: 100%;
 }
 
-.dino:nth-last-child(-n + 2) {
+.dino-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.dino:nth-child(even) {
   display: none;
 }
 
@@ -30,9 +35,10 @@ img {
   .dino-wrap {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
   }
 
-  .dino, .dino:nth-last-child(-n + 2) {
+  .dino, .dino:nth-child(even) {
     width: 50%;
     display: block;
   }
@@ -45,11 +51,11 @@ img {
     flex-wrap: nowrap;
   }
 
-  .dino, .dino:nth-child(3) {
+  .dino, .dino:nth-child(even) {
     width: 33.3333%;
   }
 
-  .dino:last-child {
+  .dino:first-child {
     display: none;
   }
 
@@ -62,7 +68,7 @@ img {
     flex-wrap: wrap;
   }
 
-  .dino, .dino:nth-last-child(-n + 2) {
+  .dino, .dino:first-child, .dino:nth-child(even) {
     display: block;
     width: 25%;
   }
